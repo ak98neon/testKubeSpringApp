@@ -18,5 +18,6 @@ spring:
     banner-mode: "off"
 
   redis:
-    host: my-release-redis-master
+    host: redis-kube-master
     port: 6379
+    password: xHLnnTU0Jc
