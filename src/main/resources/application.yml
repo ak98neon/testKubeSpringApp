@@ -18,6 +18,7 @@ spring:
     banner-mode: "off"
 
   redis:
-    host: redis-kube-master
-    port: 6379
-    password: xHLnnTU0Jc
+    sentinel:
+      master: mymaster
+      nodes: 172.17.0.7:26379, 172.17.0.8:26479, 172.17.0.9:26379
+    password: 8OlH6c20uC
