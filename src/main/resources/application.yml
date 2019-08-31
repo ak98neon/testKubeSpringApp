@@ -18,5 +18,5 @@ spring:
     banner-mode: "off"
 
   redis:
-    host: localhost
+    host: my-release-redis-master
     port: 6379
