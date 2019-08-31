@@ -20,5 +20,5 @@ spring:
   redis:
     sentinel:
       master: mymaster
-      nodes: 172.17.0.7:26379, 172.17.0.8:26479, 172.17.0.9:26379
+      nodes: redis-kube:26379
     password: 8OlH6c20uC
