@@ -8,6 +8,6 @@ image:
   repository: akudria/test-kube-spring-app
 
 service:
-  type: ClusterIP
-  port: 80
+  type: NodePort
+  port: 8080
   internalPort: 8080

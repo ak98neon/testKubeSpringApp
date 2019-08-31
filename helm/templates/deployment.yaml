@@ -1,16 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "test-kube-spring-app.fullname" . }}
-  labels:
-{{ include "test-kube-spring-app.labels" . | indent 4 }}
+  name: test-kube-spring-app
 spec:
   replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: test-kube-spring-app
   template:
     metadata:
       labels:
-        app: {{ include "test-kube-spring-app.fullname" . }}
+        app: test-kube-spring-app
     spec:
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}"
+      volumes:
+        - name: test-kube-spring-app
+          configMap:
+            name: test-kube-spring-app
+            items:
+              - key: application.yml
+                path:  config-dev.yml

@@ -11,6 +11,9 @@ management:
       show-details: "always"
 
 spring:
+  application:
+    name: test-kube-spring-app
+
   main:
     banner-mode: "off"
 

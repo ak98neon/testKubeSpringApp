@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "test-kube-spring-app.fullname" . }}
+  name: test-kube-spring-app
   labels:
-{{ include "test-kube-spring-app.labels" . | indent 4 }}
+    name: test-kube-spring-app
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: {{ include "test-kube-spring-app.fullname" . }}
+    app: test-kube-spring-app
